@@ -1,0 +1,17 @@
+{
+  "name": "fis-parser-extract-inline",
+  "version": "0.0.1",
+  "description": "extract the html inline js and tpl",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spryti/fis-parser-extract-inline.git"
+  },
+  "keywords": [
+    "fis",
+    "tpl2js"
+  ],
+  "author": "yangtao",
+  "license": "MIT",
+  "homepage": "https://github.com/spryti/fis-parser-extract-inline"
+}
