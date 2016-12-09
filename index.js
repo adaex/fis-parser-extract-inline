@@ -8,7 +8,7 @@ module.exports = function (content, file, options) {
             .replace(/["']![^'"\s]+["']/g, function (str) {
                 return str.replace('.js', '').replace('!this', this_id);
             })
-            .replace(/<script.*?data-name=["'](.*?)["'].*?>([\s\S]*?)<\/script>/g, function (str, name, value) {
+            .replace(/<(script|template).*?data-name=["'](.*?)["'].*?>([\s\S]*?)<\/(script|template)>/g, function (str, type, name, value) {
                 name = file.realpathNoExt + name.replace('this', '');
                 var f = fis.file.wrap(name);
                 f.setContent(value);
