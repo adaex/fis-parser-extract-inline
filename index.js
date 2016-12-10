@@ -3,6 +3,10 @@
 module.exports = function (content, file, options) {
 
     var this_id = file.id.replace(file.ext, '');
+    var libs = '';
+    options.libs.forEach(function (lib) {
+        libs += '<script type="text/javascript" src="' + lib + '"></script>\r\n'
+    });
 
     return '<!DOCTYPE html>\r\n' + content
             .replace(/["']![^'"\s]+["']/g, function (str) {
@@ -16,5 +20,9 @@ module.exports = function (content, file, options) {
                 file.derived.push(f);
                 return '';
             })
+            .replace(/<script.*?>[\s\S]*?<\/script>/, function (str) {
+                return libs + str;
+            })
+            .replace(/\{config\.host\}/g, options.host)
             .match(/<html.*?>[\s\S]*?<\/html>/);
 };
