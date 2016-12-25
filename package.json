@@ -1,6 +1,6 @@
 {
   "name": "fis-parser-extract-inline",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "extract the html inline js and tpl",
   "main": "index.js",
   "repository": {

@@ -30,6 +30,5 @@ module.exports = function (content, file, options) {
             .replace(/<script.*?>[\s\S]*?<\/script>/, function (str) {
                 return libs + str;
             })
-            .replace(/\{config\.host\}/g, options.host)
             .match(/<html.*?>[\s\S]*?<\/html>/);
 };
